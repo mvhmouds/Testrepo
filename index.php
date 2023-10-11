@@ -1,6 +1,4 @@
 <?php
-// Include the password validation function
-require_once('password_validation.php'); // Include the file with your validation code
 
 // Check if the form has been submitted
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
