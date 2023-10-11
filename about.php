@@ -1,8 +1,8 @@
-<!-- index.php -->
+<!-- about.php -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My PHP Website - Home</title>
+    <title>My PHP Website - About</title>
     <!-- Include your CSS here -->
 </head>
 <body>
@@ -18,8 +18,8 @@
     </header>
     
     <main>
-        <h2>Home Page</h2>
-        <p>Welcome to the home page of my PHP website.</p>
+        <h2>About Page</h2>
+        <p>Learn more about our website and what we do.</p>
     </main>
     
     <footer>

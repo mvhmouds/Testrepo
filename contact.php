@@ -1,8 +1,8 @@
-<!-- index.php -->
+<!-- contact.php -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My PHP Website - Home</title>
+    <title>My PHP Website - Contact</title>
     <!-- Include your CSS here -->
 </head>
 <body>
@@ -18,8 +18,8 @@
     </header>
     
     <main>
-        <h2>Home Page</h2>
-        <p>Welcome to the home page of my PHP website.</p>
+        <h2>Contact Page</h2>
+        <p>Contact us for any inquiries or feedback.</p>
     </main>
     
     <footer>
