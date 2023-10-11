@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projet de Validation de Mot de Passe</title>
+</head>
+<body>
+<h1>Projet de Validation de Mot de Passe</h1>
 <?php
 function validerEtCrypterMotDePasse($motDePasseSaisi) {
     // Vérifier la longueur du mot de passe
@@ -39,3 +46,5 @@ if (isset($_POST['motDePasse'])) {
     </form>';
 }
 ?>
+</body>
+</html>
