@@ -1,50 +1,84 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Projet de Validation de Mot de Passe</title>
+    <title>My PHP Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
 </head>
 <body>
-<h1>Projet de Validation de Mot de Passe</h1>
-<?php
-function validerEtCrypterMotDePasse($motDePasseSaisi) {
-    // Vérifier la longueur du mot de passe
-    if (strlen($motDePasseSaisi) < 6 || strlen($motDePasseSaisi) > 10) {
-        return "Erreur : Le mot de passe doit avoir entre 6 et 10 caractères.";
-    }
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <?php
+        // Dynamic content based on the page
+        $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
-    // Créer le "salt" statique
-    $salt = "ABC1234@";
-
-    // Concaténer le "salt" au mot de passe
-    $motDePasseAvecSalt = $motDePasseSaisi . $salt;
-
-    // Chiffrer le mot de passe (vous pouvez utiliser une méthode de hachage, par exemple, MD5)
-    $motDePasseCrypte = md5($motDePasseAvecSalt);
-
-    // Simuler un mot de passe correct
-    $motDePasseCorrect = md5("MotDePasseCorrect" . $salt);
-
-    // Comparer le mot de passe entré avec le mot de passe correct
-    if ($motDePasseCrypte === $motDePasseCorrect) {
-        return "Mot de passe correct. Accès autorisé !";
-    } else {
-        return "Mot de passe incorrect. Accès refusé.";
-    }
-}
-
-if (isset($_POST['motDePasse'])) {
-    $motDePasseSaisi = $_POST['motDePasse'];
-    $message = validerEtCrypterMotDePasse($motDePasseSaisi);
-    echo "Salt : ABC1234@<br>";
-    echo "Mot de passe chiffré : " . md5($motDePasseSaisi . "ABC1234@") . "<br>";
-    echo $message;
-} else {
-    // Afficher le formulaire pour saisir le mot de passe
-    echo '<form method="POST" action="">
-    Entrez le mot de passe : <input type="password" name="motDePasse">
-    <input type="submit" value="Valider">
-    </form>';
-}
-?>
+        switch ($page) {
+            case 'home':
+                include('home.php');
+                break;
+            case 'about':
+                include('about.php');
+                break;
+            case 'contact':
+                include('contact.php');
+                break;
+            default:
+                include('404.php');
+        }
+        ?>
+    </main>
+    
+    <footer>
+        <p>&copy; <?php echo date('Y'); ?> My PHP Website</p>
+    </footer>
 </body>
 </html>
